@@ -16,3 +16,5 @@ plugins:
 collections:
   collections:
     output: true
+footer-links:
+  github: redhat-cop/aap_config_as_code_docs

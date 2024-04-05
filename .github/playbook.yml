@@ -4,13 +4,37 @@
   connection: local
   gather_facts: false
   tasks:
+    - name: Delete directories
+      ansible.builtin.file:
+        path: "../_collections"
+        state: absent
+        mode: "0755"
+
+    - name: Create _collections directory
+      ansible.builtin.file:
+        path: "../_collections"
+        state: directory
+        mode: "0755"
+
+    - name: Create sub directories
+      ansible.builtin.file:
+        path: "../_collections/{{ item }}"
+        state: directory
+        mode: "0755"
+      loop:
+        - controller_configuration
+        - galaxy_collection
+        - eda_configuration
+        - aap_utilities
+        - ee_utilities
+
     - name: Create temporary direcotry
       ansible.builtin.tempfile:
         state: directory
         suffix: temp
       register: r_tempfile
 
-    - name: Create directories
+    - name: Create temporary directories
       ansible.builtin.file:
         path: "{{ r_tempfile['path'] }}/{{ item }}"
         state: directory

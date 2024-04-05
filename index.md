@@ -103,8 +103,11 @@ Links to other Validated Configuration Collections for Ansible Automation Platfo
 
 ### Event Driven Ansible Configuration:
 * [credential](collections/eda_config/credential.html)
+* [decision_environment](collections/eda_config/decision_environment.html)
 * [project](collections/eda_config/project.html)
 * [project_sync](collections/eda_config/project_sync.html)
+* [rulebook_activation](collections/eda_config/rulebook_activation.html)
+* [user_token](collections/eda_config/user_token.html)
 
 ### AAP Installation Utilities:
 * [aap_backup](collections/aap_utilities/aap_backup.html)
