@@ -4,7 +4,7 @@ name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 on:
   # Runs on pushes targeting the default branch
   schedule:
-    - cron: "1 * * * 1"
+    - cron: "0 1 * * 1"
   push:
     branches: ["devel"]
 
@@ -59,6 +59,8 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           branch: docs
+          push_options: '--force'
+          skip_checkout: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
